@@ -1,0 +1,6 @@
+List of cycling parks:
+Park1, Park2, Park3, Park4, Park5, Park6, Park7, Park8, Park9, Park10
+Total number of cycles required per month:
+ June2022 240
+ May2022 210
+May2022 60
