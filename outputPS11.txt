@@ -1,6 +1,19 @@
+****************PS11 Output File***************
+
 List of cycling parks:
-Park1, Park2, Park3, Park4, Park5, Park6, Park7, Park8, Park9, Park10
+Park10, Park8, Park2, Park5, Park6, Park7, Park9, park12, Park4, Park3, Park1
+
+
 Total number of cycles required per month:
- June2022 240
- May2022 210
-May2022 60
+May2022 460
+June2022 880
+
+
+Park with maximum number of cycles for the given month of May2022: is Park7 with 80 cycles
+
+List of cycling parks:
+Park10, Park8, Park2, Park5, Park6, Park7, Park9, park12, Park4, Park3, Park1
+
+
+Park with maximum number of cycles for the given month of May2022: is Park7 with 80 cycles
+
