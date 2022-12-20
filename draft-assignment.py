@@ -26,6 +26,7 @@ def ReadInputFile():
 
 
 # #Problem : Query 1- Generate a list of all cycling parks the startup is currently supplying cycles to.
+#no heap generation here
 def ListAllParks():
     global parent_list
     global park_list
@@ -43,6 +44,7 @@ def ListAllParks():
         output_file.write("\n\n")
 
 #Problem- Query 2- Calculate the total number of cycles required across all parks per month.
+#no heap here..
 def GetCyclesPerMonth():
     global cycles_per_month
     for entry in parent_list:
@@ -64,13 +66,14 @@ def GetCyclesPerMonth():
             output_file.write(f"{month} {cycles}\n")
         output_file.write("\n\n")
 #
-# #Problem- Query 3- Find out which park requires the maximum number of cycles in a given month.
+# Problem- Query 3- Find out which park requires the maximum number of cycles in a given month.
 # # (Note: take minimum 10 to 12 parks for each month)
 # #Here we need to heapify data with max heap
 #
 def heapifyPark():
     #take user input here
-    given_month="May2022"
+    #given_month=input("Enter Park:")
+    given_month = "May2022"
     park_heap=[]
     for entry in parent_list:
         entry_park=entry[0]
@@ -87,7 +90,7 @@ def heapifyPark():
 
     #find the park with maximum cycles in the given month
     park_max=heapq._heappop_max(park_heap)
-    print(f"Park with maximum number of cycles for the given month of {given_month}: is {park_max[1]} with {park_max[0]} cycles")
+    #print(f"Park with maximum number of cycles for the given month of {given_month}: is {park_max[1]} with {park_max[0]} cycles")
     with open("outputPS11.txt", "a") as output_file:
        # Calculate the total number of cycles required per month across all the parks
         output_file.write(f"Park with maximum number of cycles for the given month of {given_month}: is "
@@ -95,15 +98,16 @@ def heapifyPark():
 
 #Add new parks to the list of parks they are currently supplying to.
 def AddPark(park,cycles,month):
-    print("Add Park",park)
+    #print("Add Park",park)
     #do exception handling
+    ##Action --add heappush and add new data entered by the user
     with open("inputPS11.txt", "a") as input_file:
         input_file.write(f"\n{park},{cycles},{month}")
 
 #Remove a park from the list if the startup has stopped supplying cycles to that park.
 def RemovePark(park):
-
-    print("Removing Park if exists..",park)
+    #print("Removing Park if exists..",park)
+    ##Action --add function to remove particular node as per data entered by the user
     with open(r"inputPS11.txt") as f, open(r"workfile.txt", "w") as working:
         for line in f:
             if park not in line:
