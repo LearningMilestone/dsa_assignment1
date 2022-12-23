@@ -241,8 +241,8 @@ def MethodMain():
       print("List of parks available before adding park\n", ",".join(ListPark()))
       new_park=input("Enter the name of new park..").strip().capitalize()
       #num_cycles=int(input("Enter the number of cycles for the new park to be added: ").strip())
-      num_cycles=0
-      name_month="to be added"
+      num_cycles=int(input("Enter number of cycles"))
+      name_month=input("Enter name of the month in the format <month><year> eg. July2022: ")
       new_item = ((num_cycles, new_park, name_month))
       #this will also heapify after adding
       my_heap.heap_push(new_item)
@@ -299,9 +299,9 @@ def MethodMain():
 
       list_of_month_heap = list(zip(list_months, month_heap_list))
       # print(list_of_month_heap)
-
+      copy_heap=my_heap.heap
       for i in range(len(list_of_month_heap)):
-        for node in my_heap.heap:
+        for node in copy_heap:
             entry_cycles = node[0]
             entry_park = node[1]
             entry_month = node[2]
@@ -316,15 +316,14 @@ def MethodMain():
         with open("outputPS11.txt", "a") as output_file:
           output_file.write(f"{list_of_month_heap[i][0]} --> {list_of_month_heap[i][1].heap}\n")
 
-      print("""
-                                        1. List Parks
-                                        2. Number of cycles across a month
-                                        3. Park with maximum number of cycles in a given month
-                                        4. Add Park and heapify
-                                        5. Remove a particular park in which supply is stopped from the heap and heapify
-                                        6. Max heap tree for each month
-                                        7. Exit from the program
-                                        """)
+      print(""" 1. List Parks
+                2. Number of cycles across a month
+                3. Park with maximum number of cycles in a given month
+                4. Add Park and heapify
+                5. Remove a particular park in which supply is stopped from the heap and heapify
+                6. Max heap tree for each month
+                7. Exit from the program
+                 """)
       user_option = int(input("Please enter one of the option number(1,2,3,4,5,6,7) here: ").strip())
 
   else:
